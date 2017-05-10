@@ -1,21 +1,24 @@
-package top.mengtech;
+package top.mengtech.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import top.mengtech.domain.Girl;
+import top.mengtech.repository.GirlRepository;
+import top.mengtech.service.GirlService;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.websocket.server.PathParam;
 import java.util.List;
 
 /**
  * Created by mqm on 2017/5/3.
  */
-@RestController
+@RestController("girlController")
+@RequestMapping(value = "/girl")
 public class GirlController {
     @Autowired
     private GirlRepository girlRepository;
 
+    @Autowired
+    GirlService girlService;
     /**
      * 查询女生列表
      * @return
@@ -75,5 +78,11 @@ public class GirlController {
     @GetMapping(value = "/girlsByAge/{age}")
     public List<Girl> girlsByAge(@PathVariable("age") Integer age) {
       return girlRepository.findByAge(age);
+    }
+
+    @PostMapping(value = "/two")
+    public String two(){
+        girlService.twoGirl();
+        return "save success";
     }
 }

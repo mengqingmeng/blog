@@ -1,4 +1,4 @@
-package top.mengtech;
+package top.mengtech.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

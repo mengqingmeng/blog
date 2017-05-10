@@ -1,4 +1,4 @@
-package top.mengtech;
+package top.mengtech.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

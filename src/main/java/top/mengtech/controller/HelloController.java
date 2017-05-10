@@ -1,19 +1,16 @@
-package top.mengtech;
+package top.mengtech.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.validation.Valid;
+import top.mengtech.properties.GirlProperties;
 
 /**
  * Created by mqm on 2017/5/2.
  */
-@RestController
+@RestController("helloController")
+@RequestMapping(value = "/hello")
 public class HelloController {
   @Autowired
   private GirlProperties girlProperties;
